@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: lightgray;
+      }
+      button {
+        background-color: green;
+      }
+      #resultado {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculadora</h1>
+    <p>Selecione a operação desejada:</p>
+    <select id="operacao">
+      <option value="soma">Soma</option>
+      <option value="subtracao">Subtração</option>
+      <option value="multiplicacao">Multiplicação</option>
+      <option value="divisao">Divisão</option>
+    </select>
+    <p>Insira dois números:</p>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <br><br>
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+    <p id="resultado"></p>
+    <script>
+        // Exemplo de Função tradicional sem parâmetros
+        function mensagem() {
+          return "Bem-vindo à nossa calculadora!";
+        }
+        console.log(mensagem());
+        
+        // Exemplo de Função Função tradicional com parâmetros e retorno de valor
+        function operacao(num1, num2, op) {
+          if (op === 'soma') {
+            return num1 + num2;
+          } else if (op === 'subtracao') {
+            return num1 - num2;
+          } else if (op === 'multiplicacao') {
+            return num1 * num2;
+          } else if (op === 'divisao') {
+            return num1 / num2;
+          }
+        }
+        
+        // Exemplo de Arrow function com parâmetros e retorno de valor
+        const calcular = () => {
+          const num1 = Number(document.getElementById("num1").value);
+          const num2 = Number(document.getElementById("num2").value);
+          const op = document.getElementById("operacao").value;
+          const result = operacao(num1, num2, op);
+          document.getElementById("resultado").innerHTML = `O resultado é ${result}.`;
+        }
+      </script>
+      
+        </body>
+      </html>
